@@ -4,7 +4,7 @@
 	xmlns:semantic="clr-namespace:WPF.Controls"
 	FontFamily="Verdana" FontSize="11"
 	WindowStartupLocation="CenterScreen"
-    Title="MainWindow" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    Title="MIDIKeyBoard" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
 	<Window.Resources>
 		<ResourceDictionary>
 			<Thickness x:Key="marginInRow">8 0 0 4</Thickness>
@@ -135,7 +135,11 @@
 						<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">Chords (Ctrl+note):</TextBlock>
 						<TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2">Inversions:</TextBlock>
 						<Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" x:Name="buttonResetChords" Padding="{StaticResource paddingButton}">Reset</Button>
-						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="0" GroupName="degree13" IsChecked="True" Shift="0">x</semantic:ChordNoteRadioButton>
+                        <semantic:ChordNoteRadioButton Grid.Row="1"
+                                                       Grid.Column="0"
+                                                       GroupName="degree13"
+                                                       IsChecked="True"
+                                                       Shift="0">x</semantic:ChordNoteRadioButton>
 						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="1" GroupName="degree13" Shift="20" Changer="{Binding ElementName=cb13div2}" BigChanger="{Binding ElementName=cb13div4}">13−</semantic:ChordNoteRadioButton>
 						<semantic:ChordNoteRadioButton Grid.Row="1" Grid.Column="2" GroupName="degree13" Shift="21" Changer="{Binding ElementName=cb13div2}" BigChanger="{Binding ElementName=cb13div4}">13</semantic:ChordNoteRadioButton>
 						<semantic:ChordNoteRadioButton Grid.Row="2" Grid.Column="0" GroupName="degree11" IsChecked="True" Shift="0">x</semantic:ChordNoteRadioButton>

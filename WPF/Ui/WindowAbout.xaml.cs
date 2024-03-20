@@ -23,29 +23,8 @@ namespace WPF.Ui {
 			Title = app.ProductName;
 			Icon = app.ApplicationIcon;
 			buttonOk.Click += (sender, eventArgs) => { Hide(); };
-			textBlockProduct.Text = string.Format("{0} v.{1}.{2}", app.ProductName, version.Major, version.Minor);
-			textBlockCopyright.Text = app.Copyright;
-			string[] personalUris = app.PersonalUri;
-			if (personalUris != null) {
-				if (personalUris.Length > 0)
-					SetHyperlink(linkSa, new System.Uri(personalUris[0]), personalUris[0]);
-				if (personalUris.Length > 1)
-					SetHyperlink(linkSaCodeProject, new System.Uri(personalUris[1]), personalUris[1]);
-			} //if
-			AssemblyPublicationAttribute[] publications = app.Publications;
-			if (publications != null && publications.Length > 0) {
-				SetHyperlink(linkArticle, new System.Uri(publications[0].Uri), publications[0].Title);
-			} //if
+			Info.Text = MidiOutApi.Api.SimpleApi.GetInfo();
 		} //WindowAbout
-
-		void SetHyperlink(Hyperlink target, Uri uri, string text) {
-			if (text == null || text.Trim().Length < 0)
-				text = uri.ToString();
-			target.Inlines.Clear();
-			target.Inlines.Add(text);
-			target.NavigateUri = uri;
-			target.Click += (s, e) => { Process.Start(uri.ToString()); };
-		} //SetHyperlink
 
 		protected override void OnClosing(System.ComponentModel.CancelEventArgs e) {
 			e.Cancel = true;

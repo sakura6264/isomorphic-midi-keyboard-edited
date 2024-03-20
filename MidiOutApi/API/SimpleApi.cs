@@ -302,6 +302,11 @@ namespace MidiOutApi.Api {
 
 		int handle;
 
+		public static string GetInfo() {
+			var numDevs = midiOutGetNumDevs();
+			return string.Format("numDevs={0}", numDevs);
+		} // GetInfo
+
 		public SimpleApi() {
 			var numDevs = midiOutGetNumDevs();
 			MidiOutCaps myCaps = new MidiOutCaps();
@@ -312,7 +317,10 @@ namespace MidiOutApi.Api {
 
 		public const byte VelocityMax = 0x7F;
 		public const byte PercussionChannel = 10;
-		public readonly byte maxVelocity = VelocityMax;
+		public byte maxVelocity
+		{
+			get { return VelocityMax; }
+		}
 
 		public void /*IDisposable.*/Dispose() {
 			midiOutClose(handle);

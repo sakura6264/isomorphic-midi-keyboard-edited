@@ -41,16 +41,8 @@
 				</Grid.ColumnDefinitions>
 				<Viewbox Stretch="Uniform" Child="{StaticResource logo}"/>
 				<StackPanel Margin="{StaticResource marginText}" Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-					<TextBlock Name="textBlockProduct" Margin="{StaticResource marginParagraph}"/>
-					<TextBlock Name="textBlockCopyright" Margin="{StaticResource marginParagraph}"/>
-					<TextBlock Margin="{StaticResource marginParagraph}"><Hyperlink x:Name="linkSa"></Hyperlink></TextBlock>
-					<TextBlock Margin="{StaticResource marginParagraph}"><Hyperlink x:Name="linkSaCodeProject"></Hyperlink></TextBlock>
-					<TextBlock Margin="{StaticResource marginLastParagraph}">
-						Original publication:
-						<LineBreak/>
-						<Hyperlink x:Name="linkArticle">Original publication</Hyperlink>
-					</TextBlock>
-				</StackPanel>
+                    <TextBlock x:Name="Info" >Info</TextBlock>
+                </StackPanel>
 			</Grid>
 		</Border>
 		<StatusBar Grid.Row="1" Padding="4" BorderBrush="Black" BorderThickness="0, 0.6, 0, 0" VerticalAlignment="Bottom">
